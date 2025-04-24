@@ -5,23 +5,17 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.solid:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#root::before {
+  z-index: -1;
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: gray;
+  mask-image: url('brush-stroke.jpg');
+  mask-size: cover;
+  mask-repeat: no-repeat;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.prompt {
+  font-size: min(3rem, 10vmin);
 }

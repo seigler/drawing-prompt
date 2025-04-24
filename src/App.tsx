@@ -1,34 +1,43 @@
-import { createSignal } from 'solid-js'
-import solidLogo from './assets/solid.svg'
-import appLogo from '/favicon.svg'
-import PWABadge from './PWABadge.tsx'
+import { createSignal, onMount } from 'solid-js'
 import './App.css'
+import parts from './parts.json'
+import PWABadge from './PWABadge'
+
+const pick = (source: string[]) => {
+  return source[Math.floor(source.length * Math.random())]
+}
+
+const getPrompt = () => {
+  let prompt = ""
+  do {
+    prompt += pick(parts.adjective) + ' '
+  } while (Math.random() > 0.8)
+  if (Math.random() > 0.5) {
+    prompt += pick(parts.mod) + ' '
+  }
+  while (Math.random() > 0.75) {
+    prompt += pick(parts.animal) + '/'
+  }
+  prompt = prompt.slice(0, -1)
+  prompt += " " + pick(parts.jobs)
+  return prompt
+}
 
 function App() {
-  const [count, setCount] = createSignal(0)
+  const [suggestion, setSuggestion] = createSignal("")
+  onMount(() => {
+    setSuggestion(getPrompt())
+  })
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={appLogo} class="logo" alt="drawing-prompt logo" />
-        </a>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
-      </div>
-      <h1>drawing-prompt</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Solid logos to learn more
-      </p>
+      <h1>Your Prompt:</h1>
+      <div class="prompt">{suggestion()}</div>
+      <button on:click={() => {
+        setSuggestion(getPrompt())
+      }}>
+        ↻
+      </button>
       <PWABadge />
     </>
   )
