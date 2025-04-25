@@ -3,12 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://seigler.github.io/drawing-prompt",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "deploy": "tsc -b && vite build && gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "solid-js": "^1.9.4"
   },
   "devDependencies": {

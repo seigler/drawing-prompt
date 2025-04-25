@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [solid(), VitePWA({
     registerType: 'autoUpdate',
     injectRegister: false,
+    base: "/drawing-prompt/",
 
     pwaAssets: {
       disabled: false,
