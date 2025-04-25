@@ -31,9 +31,9 @@ function App() {
 
   return (
     <>
-      <h1>Your Prompt:</h1>
+      <div>You should draw {['a','e','i','o','u'].includes(suggestion().charAt(0)) ? 'an' : 'a'}</div>
       <div class="prompt">{suggestion()}</div>
-      <button on:click={() => {
+      <button id="regenerate" on:click={() => {
         setSuggestion(getPrompt())
       }}>
         ↻

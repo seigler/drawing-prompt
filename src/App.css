@@ -1,21 +1,45 @@
+:root {
+  background: url(data:image/bmp;base64,Qk1aBAAAAAAAADYAAAAoAAAABAAAAAMAAAABABgAAAAAACQAAAATCwAAEwsAAAAAAAAAAAAAYoKGcJCTdI2QZHp3X3h/cYyNeYuOZXp5RmNkZnt3c3p2U2xo);
+  background-size: cover;
+}
+
+@font-face {
+  font-family: 'helsinkiregular';
+  src: url('helsinki-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #root {
-  max-width: 1280px;
+  position: relative;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  font-family: 'helsinkiregular', sans-serif;
 }
 
 #root::before {
   z-index: -1;
   content: '';
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: gray;
-  mask-image: url('brush-stroke.jpg');
+  margin: auto;
+  height: min(100vh, 50rem);
+  background-color: #FFF;
+  mask-image: url('brush-stroke.png');
   mask-size: cover;
   mask-repeat: no-repeat;
+  mask-position: center;
 }
 
 .prompt {
   font-size: min(3rem, 10vmin);
+  text-shadow: 0 0 0.1em white, 0 0 0.25em white, 0 0 0.5em white, 0 0 1em white;
+  width: min(80vmax, calc(100vw - 2rem));
+  margin: 0 auto;
+}
+
+#regenerate {
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
 }
