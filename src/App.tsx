@@ -1,5 +1,5 @@
 import { createSignal, onMount } from 'solid-js'
-import './App.css'
+import './assets/App.css'
 import parts from './parts.json'
 import PWABadge from './PWABadge'
 

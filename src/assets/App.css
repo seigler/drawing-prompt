@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'helsinkiregular';
-  src: url('../helsinki-webfont.woff') format('woff');
+  src: url('helsinki-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,8 +24,8 @@
   inset: 0;
   margin: auto;
   height: min(100vh, 50rem);
-  background-color: #FFF;
-  mask-image: url('../brush-stroke.png');
+  background-color: var(--color-bg);
+  mask-image: url('brush-stroke.png');
   mask-size: cover;
   mask-repeat: no-repeat;
   mask-position: center;
@@ -33,7 +33,7 @@
 
 .prompt {
   font-size: min(3rem, 10vmin);
-  text-shadow: 0 0 0.1em white, 0 0 0.25em white, 0 0 0.5em white, 0 0 1em white;
+  text-shadow: 0 0 0.1em var(--color-bg), 0 0 0.25em var(--color-bg), 0 0 0.5em var(--color-bg), 0 0 1em var(--color-bg);
   width: min(80vmax, calc(100vw - 2rem));
   margin: 0 auto;
 }
