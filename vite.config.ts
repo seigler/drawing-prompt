@@ -4,10 +4,10 @@ import solid from 'vite-plugin-solid'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "/drawing-prompt/",
   plugins: [solid(), VitePWA({
     registerType: 'autoUpdate',
     injectRegister: false,
-    base: "/drawing-prompt/",
 
     pwaAssets: {
       disabled: false,

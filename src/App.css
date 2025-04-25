@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: 'helsinkiregular';
-  src: url('helsinki-webfont.woff') format('woff');
+  src: url('../helsinki-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,7 +25,7 @@
   margin: auto;
   height: min(100vh, 50rem);
   background-color: #FFF;
-  mask-image: url('brush-stroke.png');
+  mask-image: url('../brush-stroke.png');
   mask-size: cover;
   mask-repeat: no-repeat;
   mask-position: center;
